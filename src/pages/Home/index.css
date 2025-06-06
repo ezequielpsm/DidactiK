@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body, html, #root {
+  height: 100%;
+  background-color: #f5f8fc;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #eff3fb;
+  padding: 20px;
+  border-right: 1px solid #dbe2ea;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 10px 0;
+  color: #333;
+  cursor: pointer;
+}
+
+.sidebar .active {
+  font-weight: bold;
+  color: #3f63f7;
+}
+
+.sidebar .link {
+  margin-top: 20px;
+  color: #11767c;
+  font-weight: 500;
+}
+
+.main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.header p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.content h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.tools {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.tool {
+  background-color: #eef1f9;
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 140px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.tool:hover {
+  transform: scale(1.05);
+  background-color: #e0e9ff;
+}
+
+.suggestion-card {
+  background-color: #d7e2ff;
+  padding: 20px;
+  border-radius: 10px;
+  width: fit-content;
+}
