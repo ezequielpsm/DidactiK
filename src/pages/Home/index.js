@@ -1,19 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react'; // <- importa useState corretamente
 import './index.css';
+import LessonPlanForm from './LessonPlanForm'; // <- caminho correto para o componente
 
 export default function Home() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="container">
       <aside className="sidebar">
-        <ul>
-          <li className="active">Início</li>
-          <li>Meus materiais</li>
-          <li>Minhas aulas</li>
-          <li>Turmas</li>
-          <li>Comunidade</li>
-          <li className="link">Convide um amigo</li>
-          <li className="link">Treinamentos e recursos</li>
-        </ul>
+        {/* ... seu aside */}
       </aside>
 
       <main className="main">
@@ -24,7 +19,7 @@ export default function Home() {
         <section className="content">
           <h2>Criar materiais</h2>
           <div className="tools">
-            <div className="tool">Plano de Aula</div>
+            <div className="tool" onClick={() => setShowModal(true)}>Plano de Aula</div>
             <div className="tool">Mapa Mental</div>
             <div className="tool">Corretor de Redação</div>
             <div className="tool">Relatório</div>
@@ -39,6 +34,16 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      {/* Aqui entra o modal */}
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <button className="modal-close" onClick={() => setShowModal(false)}>X</button>
+            <LessonPlanForm />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
